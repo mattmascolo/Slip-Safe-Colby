@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlipSafeCo</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- HTMX CDN -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-amber-600">SlipSafeCo</h1>
+                </div>
+                <div class="flex items-center gap-3">
+                    <!-- Navigation Links - Hidden on smaller screens -->
+                    <div class="hidden md:flex items-center space-x-4 mr-2">
+                        <a href="#built-for-you" class="text-slate-700 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#about" class="text-slate-700 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#contact-form" class="text-slate-700 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                    <!-- Call Button -->
+                    <a href="tel:3039150356" class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
+                            <path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.208c.51 0 .966.32 1.132.804l.916 2.75a1.25 1.25 0 0 1-.361 1.33l-1.05 1.05a11.5 11.5 0 0 0 4.2 4.2l1.05-1.05c.35-.35.87-.48 1.33-.36l2.75.916c.485.166.804.622.804 1.132V16.5A1.5 1.5 0 0 1 14.5 18h-1A11.5 11.5 0 0 1 2 6.5v-1Z"/>
+                        </svg>
+                        <span class="hidden sm:inline">303-915-0356</span>
+                    </a>
+                    <!-- Book a Demo Button -->
+                    <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;" class="inline-flex items-center px-5 py-2 rounded-md bg-amber-600 text-white hover:bg-amber-700 transition-colors text-sm font-semibold shadow-sm">
+                        Book a Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6">
+        <!-- Hero Section -->
+        <section class="bg-white lg:grid lg:h-screen lg:place-content-center">
+            <div
+              class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
+            >
+              <div class="max-w-prose text-left mb-10 md:mb-0">
+                <h1 class="text-4xl font-bold text-slate-900 sm:text-5xl">
+                    The Solution to <br />
+                  <strong class="text-amber-500"> "Slippery When Wet" </strong>
+                </h1>
+          
+                <p class="mt-4 text-base text-pretty text-slate-700 sm:text-lg/relaxed">
+                    Non-Slip floor & tub treatments across the Denver metro. Measured results on the spot with coefficient of friction (COF) testing.
+                </p>
+          
+                <div class="mt-4 flex gap-4 sm:mt-6">
+                  <a
+                    class="inline-block rounded border border-amber-600 bg-amber-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-amber-700"
+                    href="#"
+                  >
+                    Book a Free Demo
+                  </a>
+                </div>
+              </div>
+          
+              <div
+                class="mx-auto max-w-xs md:max-w-lg text-slate-900 md:block"
+              >
+                <div class="w-full aspect-[9/16]">
+                  <iframe
+                    class="h-full w-full rounded-lg shadow-lg"
+                    src="https://www.youtube.com/embed/AhSygHmiEyY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- Built exclusively for you - Tabbed Section -->
+        <section id="built-for-you" class="bg-white overflow-hidden mb-8" data-tabs>
+            <div class="px-4 py-5 sm:p-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Services We Offer</h2>
+                    <p class="mt-3 text-gray-600">At Slip Safe Colorado, we provide innovative solutions that make indoor and outdoor spaces safer for everyone. Our cutting-edge treatments reduce the risk of slip and falls while maintaining the original appearance of your surfaces.</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="mt-6">
+                    <div role="tablist" aria-label="Feature tabs" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-tab-target="1" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-amber-700 hover:bg-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+                                <svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill="currentColor" d="M20 20h6v16h-6z"></path>
+                                    <path fill-opacity=".64" fill="currentColor" d="M29 20h3v16h-3zM35 20h1v16h-1z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-semibold text-slate-900">Floor Treatment</span>
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-tab-target="2" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                                <svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill-opacity=".64" fill="currentColor" d="M33 23v8h3V20H25v3z"></path>
+                                    <path fill="currentColor" d="M20 25h11v11H20z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-semibold text-slate-900">Bathtub Treatment</span>
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" data-tab-target="3" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600">
+                                <svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill-opacity=".64" fill="currentColor" d="M20 27l7-7h-7z"></path>
+                                    <path fill="currentColor" d="M29 20l7 7v-7z"></path>
+                                    <path fill-opacity=".64" fill="currentColor" d="M36 29l-7 7h7z"></path>
+                                    <path fill="currentColor" d="M27 36l-7-7v7z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-semibold text-slate-900">Slip Testing</span>
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" data-tab-target="4" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                                <svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M24 28h-4v4.9c0 1 .7 1.9 1.7 2.1 1.2 .2 2.3-.8 2.3-2v-5z" fill-opacity=".64" fill="currentColor"></path>
+                                    <path d="M35 21h-8c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H33c1.7 0 3-1.3 3-3V22c0-.6-.4-1-1-1z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-semibold text-slate-900">Deep Clean</span>
+                        </button>
+                    </div>
+
+                    <!-- Panels -->
+                    <div class="mt-6">
+                        <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" class="rounded-lg border border-slate-200 overflow-hidden" data-tab-panel="1">
+                            <div class="grid md:grid-cols-2 gap-0 bg-gradient-to-r from-amber-50 to-amber-100">
+                                <div class="flex items-center justify-center p-8 order-2 md:order-1">
+                                    <div class="max-w-xl">
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Non-Slip Floor Treatment</h3>
+                                        <p class="text-slate-800">Our Sure Step treatment creates an invisible micro tread design on hard mineral floors, increasing slip-resistance. The treatment increases the coefficient of friction when a floor or surface gets wet, making it dramatically more slip-resistant and safer. Suitable for concrete, Spanish tile, glazed brick, terrazzo, quarry tile, ceramic tile, marble or porcelain/enamel tile.</p>
+                                    </div>
+                                </div>
+                                <div class="order-1 md:order-2">
+                                    <img src="assets/img/floor-treatment.jpg" alt="Floor treatment application" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" class="hidden rounded-lg border border-slate-200 overflow-hidden" data-tab-panel="2">
+                            <div class="grid md:grid-cols-2 gap-0 bg-gradient-to-r from-blue-50 to-blue-100">
+                                <div class="flex items-center justify-center p-8 order-2 md:order-1">
+                                    <div class="max-w-xl">
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Non-Slip Bathtub Treatment</h3>
+                                        <p class="text-slate-800">Our specialized bathtub treatment provides a safer bathing experience for you and your family. The treatment leaves no residue, film, or coating, maintaining the original appearance of your bathtub. Applied by certified installers, it dramatically increases slip-resistance when wet, providing peace of mind and a secure surface.</p>
+                                    </div>
+                                </div>
+                                <div class="order-1 md:order-2">
+                                    <img src="assets/img/bathtub-treatment.jpg" alt="Bathtub treatment application" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" class="hidden rounded-lg border border-slate-200 overflow-hidden" data-tab-panel="3">
+                            <div class="grid md:grid-cols-2 gap-0 bg-gradient-to-r from-green-50 to-green-100">
+                                <div class="flex items-center justify-center p-8 order-2 md:order-1">
+                                    <div class="max-w-xl">
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Slip Testing (COF Measurement)</h3>
+                                        <p class="text-slate-800">Using the BOT-3000E digital floor tribometer, we measure the Coefficient of Friction (COF) on your floors. Slip resistance testing can detect problems before they cause accidents and verify that treatments are effective. Monitoring tests are typically conducted quarterly, semiannually, or annually to ensure ongoing safety compliance.</p>
+                                    </div>
+                                </div>
+                                <div class="order-1 md:order-2">
+                                    <img src="assets/img/slip-testing.jpg" alt="Slip resistance testing with BOT-3000E" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" class="hidden rounded-lg border border-slate-200 overflow-hidden" data-tab-panel="4">
+                            <div class="grid md:grid-cols-2 gap-0 bg-gradient-to-r from-purple-50 to-purple-100">
+                                <div class="flex items-center justify-center p-8 order-2 md:order-1">
+                                    <div class="max-w-xl">
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Tile and Grout Deep Clean</h3>
+                                        <p class="text-slate-800">Our comprehensive tile and grout deep cleaning service removes built-up dirt, grime, and stains while restoring your surfaces to their original beauty. This service can be combined with our slip-resistant treatments for a complete floor safety and maintenance solution. Professional caulking services are also available.</p>
+                                    </div>
+                                </div>
+                                <div class="order-1 md:order-2 flex items-center justify-center p-4 bg-white">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPZ4khhCcXn/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DPZ4khhCcXn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DPZ4khhCcXn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Slip Safe Colorado (@slipsafecolorado)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative isolate overflow-hidden bg-slate-900 py-16 sm:py-24">
+            <div class="mx-auto max-w-3xl text-center">
+                <p class="text-sm font-semibold uppercase tracking-widest text-amber-400">See the Difference</p>
+                <h2 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Scientifically Proven Safety Solutions</h2>
+            </div>
+            <div class="mx-auto mt-12 w-full max-w-sm sm:max-w-xl lg:max-w-3xl px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Before Video -->
+                    <div class="flex flex-col">
+                        <h3 class="text-2xl font-bold text-white text-center mb-4">Before</h3>
+                        <div class="rounded-3xl bg-gradient-to-tr from-slate-800 to-red-500 p-2 shadow-2xl">
+                            <div class="aspect-[9/16] w-full overflow-hidden rounded-3xl bg-black">
+                                <video
+                                    class=""
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="auto"
+                                    style="width:110%;height:110%;top:-20px;left:-20px;position:relative;object-fit:contain;display:block;max-width:110%;"
+                                    aria-label="Before treatment video"
+                                >
+                                    <source src="assets/video/sure-step-before-slip.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- After Video -->
+                    <div class="flex flex-col">
+                        <h3 class="text-2xl font-bold text-white text-center mb-4">After</h3>
+                        <div class="rounded-3xl bg-gradient-to-tr from-slate-800 to-amber-500 p-2 shadow-2xl">
+                            <div class="aspect-[9/16] w-full overflow-hidden rounded-3xl bg-black">
+                                <video
+                                    class=""
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="auto"
+                                    style="width:110%;height:110%;top:-20px;left:-20px;position:relative;object-fit:contain;display:block;max-width:110%;"
+                                    aria-label="After treatment video"
+                                >
+                                    <source src="assets/video/sure-step-after-slip.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- About Individual Section -->
+        <section id="about" class="bg-white">
+            <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+                <div class="md:grid md:grid-cols-2 md:items-center md:gap-12">
+                    <!-- Text -->
+                    <div class="max-w-prose">
+                        <p class="text-sm font-semibold uppercase tracking-widest text-amber-500">About Me</p>
+                        <h3 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Colby Lindfield</h3>
+                      
+                        <p class="mt-4 text-base text-slate-700 sm:text-lg/relaxed">
+                          I’ve spent <strong>6+ years</strong> remodeling homes and commercial spaces across Colorado. I started
+                          <strong>Slip Safe Colorado</strong> after seeing great floors become dangerous the moment they get wet.
+                          I use the <strong>Sure Step®</strong> non-slip system and on-site <strong>BOT-3000E COF testing</strong>
+                          to make surfaces safer—without changing how they look. Owner-operated, local, and focused on clear,
+                          measurable results.
+                        </p>
+                      
+                        <!-- Creds / Badges -->
+                        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-700">
+                          <li class="flex items-start gap-3">
+                            <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                            <span>Sure Step® trained &amp; equipped</span>
+                          </li>
+                          <li class="flex items-start gap-3">
+                            <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                            <span>Licensed &amp; insured <span class="text-slate-500">(COI available upon request)</span></span>
+                          </li>
+                          <li class="flex items-start gap-3">
+                            <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                            <span>Before/after <abbr title="Coefficient of Friction">COF</abbr> report for your records</span>
+                          </li>
+                          <li class="flex items-start gap-3">
+                            <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                            <span>Denver-metro service • flexible scheduling • minimal downtime</span>
+                          </li>
+                        </ul>
+                      
+                        <div class="mt-6 flex flex-wrap gap-3">
+                          <a class="inline-block rounded border border-amber-600 bg-amber-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-amber-700"
+                             href="#"
+                             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/quick-call?primary_color=f59f0b'}); return false;">
+                            Book a Free Demo
+                          </a>
+                          <a class="inline-block rounded border border-amber-600 px-5 py-3 font-medium text-amber-700 shadow-sm transition-colors hover:bg-amber-50"
+                             href="#contact-form">
+                            Request a Quote
+                          </a>
+                        </div>
+                      
+                        <!-- Fine print (keeps you compliant) -->
+                        <p class="mt-4 text-xs text-slate-500">
+                          Slip Safe Colorado is an independent installer of the Sure Step® non-slip system. Manufacturer accreditation or ratings
+                          apply to the manufacturer and do not imply accreditation of Slip Safe Colorado.
+                        </p>
+                      </div>
+                      
+
+                    <!-- Image on the right -->
+                    <div class="mt-10 md:mt-0 md:pl-6">
+                        <div class="relative mx-auto max-w-sm">
+                            <div class="rounded-3xl bg-gradient-to-tr from-slate-800 to-amber-500 p-1 shadow-2xl">
+                                <img
+                                    class="h-auto w-full rounded-3xl object-cover"
+                                    src="assets/img/colby-applying-treatment.jpg"
+                                    alt="Portrait of Colby Lindfield"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Residential Services Section -->
+        <section id="residential-services" class="bg-slate-50 overflow-hidden pb-4">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Residential Services</h2>
+                    <p class="mt-3 text-gray-600">Safer homes for families, from bathtubs to pool decks.</p>
+                </div>
+
+                <!-- Where we work -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-3">Where we work</h3>
+                    <p class="text-slate-700">Bathtubs & showers • Pool decks • Patios • High-gloss tile • Entryways</p>
+                </div>
+
+                <!-- Benefits -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4">Benefits</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">Peace of mind for kids, grandparents, and guests</span>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">Invisible finish: no film, no grit, no color change</span>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">Fast visit: most homes done in under two hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini FAQ -->
+                <div class="max-w-4xl mx-auto mb-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4">Quick answers</h3>
+                    <div class="space-y-3">
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <p class="font-medium text-slate-900 mb-1">Will it change how it looks?</p>
+                            <p class="text-slate-700">No—no residue, film, or coating.</p>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <p class="font-medium text-slate-900 mb-1">How long does it take?</p>
+                            <p class="text-slate-700">Most treatments are completed in 60–120 minutes.</p>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-white p-4">
+                            <p class="font-medium text-slate-900 mb-1">How long does it last?</p>
+                            <p class="text-slate-700">With normal cleaning, results are long-lasting; we can re-test annually.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="max-w-2xl mx-auto flex justify-center">
+                    <a
+                        href="#"
+                        role="button"
+                        class="inline-block rounded border border-amber-600 bg-amber-600 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-amber-700 text-center"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
+                    >
+                        Schedule a home visit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commercial Services Section -->
+        <section id="commercial-services" class="bg-white overflow-hidden mt-4">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Commercial Services</h2>
+                    <p class="mt-3 text-gray-600">Professional slip-resistance solutions for businesses and facilities across Colorado.</p>
+                </div>
+
+                <!-- Who we help -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-3">Who we help</h3>
+                    <p class="text-slate-700">Hotels & resorts • Restaurants & commercial kitchens • Fitness centers • Healthcare & senior living • Schools & childcare • Property managers • Pools & aquatics</p>
+                </div>
+
+                <!-- Why they care -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4">Why it matters</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">Reduce injury risk and show due diligence during insurance audits</span>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">Support OSHA/ADA-related safety programs with before/after COF reports</span>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-semibold">✓</span>
+                                <span class="text-slate-700">No shutdowns: we treat during normal operations; results are immediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA row -->
+                <div class="max-w-2xl mx-auto flex justify-center">
+                    <a
+                        href="#"
+                        role="button"
+                        class="inline-block rounded border border-amber-600 bg-amber-600 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-amber-700 text-center"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
+                    >
+                        Book a free on-site demo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQ Section -->
+        <section class="bg-white">
+            <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 text-center">Frequently asked questions</h2>
+                    <p class="mt-3 text-gray-600 text-center">Quick answers about our non-slip floor treatments.</p>
+                    <div class="mt-8 divide-y divide-slate-200 border border-slate-200 rounded-xl">
+                        <details class="group p-6">
+                            <summary class="flex cursor-pointer items-center justify-between text-left">
+                                <span class="text-base font-medium text-slate-900">What are your service areas?</span>
+                                <svg class="ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                                </svg>
+                            </summary>
+                            <div class="mt-3 text-slate-700">
+                                We provide services across a broad area, ensuring that Colorado is safeguarded against slip and fall incidents. To determine if we service your specific location, please contact our team, and we will be pleased to assist you.
+                            </div>
+                        </details>
+                        <details class="group p-6">
+                            <summary class="flex cursor-pointer items-center justify-between text-left">
+                                <span class="text-base font-medium text-slate-900">Why do I need this service?</span>
+                                <svg class="ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                                </svg>
+                            </summary>
+                            <div class="mt-3 text-slate-700">
+                                Contact us to see how our service can improve your slippery surface. Our application reduces the risk of slip and fall injuries, ensuring a safe environment for your staff, visitors, and clients.
+                            </div>
+                        </details>
+                        <details class="group p-6">
+                            <summary class="flex cursor-pointer items-center justify-between text-left">
+                                <span class="text-base font-medium text-slate-900">How do I get in contact with you?</span>
+                                <svg class="ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                                </svg>
+                            </summary>
+                            <div class="mt-3 text-slate-700">
+                                To schedule or request a demo, please fill out our <a href="#contact-form" class="text-amber-600 underline hover:text-amber-700">request form</a> or contact us at <a href="tel:3039150356" class="text-amber-600 underline hover:text-amber-700">303‑915‑0356</a>.
+                            </div>
+                        </details>
+                        <details class="group p-6">
+                            <summary class="flex cursor-pointer items-center justify-between text-left">
+                                <span class="text-base font-medium text-slate-900">What kind of surface can this be applied to?</span>
+                                <svg class="ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                                </svg>
+                            </summary>
+                            <div class="mt-3 text-slate-700">
+                                Indoor or outdoor surfaces such as concrete, Spanish tile, glazed brick, terrazzo, quarry tile, ceramic tile, marble or porcelain/enamel tile.
+                            </div>
+                        </details>
+                        <details class="group p-6">
+                            <summary class="flex cursor-pointer items-center justify-between text-left">
+                                <span class="text-base font-medium text-slate-900">How does it work?</span>
+                                <svg class="ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                                </svg>
+                            </summary>
+                            <div class="mt-3 text-slate-700">
+                                Our Sure Step treatment is applied by our certified installers and then promptly removed, leaving zero residue, film or coating. Our products will not change or alter the appearance of the treated floor or bathtub.
+                                <ul class="mt-3 list-disc pl-5 space-y-1">
+                                    <li>Requires no shutdown time.</li>
+                                    <li>Not a sealer, sprayed on film or coating.</li>
+                                    <li>Not an etching treatment.</li>
+                                    <li>Applicable for indoor or outdoor installations in any condition.</li>
+                                    <li>Requires no special cleaning products.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <div id="contact-form" class="bg-white overflow-hidden">
+            <div class="px-4 sm:p-6">
+
+                <!-- Form Demo -->
+                <div class="mb-6">
+                <!-- Calendly links -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+                <div class="max-w-2xl mx-auto">
+                    <div class="rounded-2xl border border-amber-200 bg-amber-50/40 p-6 sm:p-8 shadow-sm">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-slate-900">Let's talk!</h3>
+                            <p class="mt-2 text-sm text-slate-700">Get answers and a custom quote. Free, no obligation.</p>
+                        </div>
+
+                        <div class="mt-5 space-y-2">
+                            <a
+                                href="#"
+                                role="button"
+                                class="flex w-full items-center justify-center gap-2 rounded-md bg-amber-500 px-5 py-4 text-center text-lg font-semibold text-white shadow-sm transition-colors hover:bg-amber-600"
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/quick-call?primary_color=f59f0b'}); return false;"
+                                aria-label="Schedule a call"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.208c.51 0 .966.32 1.132.804l.916 2.75a1.25 1.25 0 0 1-.361 1.33l-1.05 1.05a11.5 11.5 0 0 0 4.2 4.2l1.05-1.05c.35-.35.87-.48 1.33-.36l2.75.916c.485.166.804.622.804 1.132V16.5A1.5 1.5 0 0 1 14.5 18h-1A11.5 11.5 0 0 1 2 6.5v-1Z"/></svg>
+                                Schedule a call
+                            </a>
+                            <p class="text-center text-xs text-slate-500">Choose a time & I'll call you!</p>
+
+                            <a
+                                href="#"
+                                role="button"
+                                class="flex w-full items-center justify-center gap-2 rounded-md border border-amber-500 bg-white px-5 py-4 text-center text-lg font-semibold text-amber-700 shadow-sm transition-colors hover:bg-amber-50"
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
+                                aria-label="Schedule a 30 minute in-person demo"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path d="M6 2a1 1 0 0 1 1 1v1h6V3a1 1 0 1 1 2 0v1h.5A1.5 1.5 0 0 1 17 5.5v10A1.5 1.5 0 0 1 15.5 17h-11A1.5 1.5 0 0 1 3 15.5v-10A1.5 1.5 0 0 1 4.5 4H5V3a1 1 0 0 1 1-1Zm9 7H5v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V9Z"/></svg>
+                                Schedule a 30 min in-person demo
+                            </a>
+                            <p class="text-center text-xs text-slate-500">Denver metro — we come to you.</p>
+                        </div>
+
+                        <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600">
+                            <span class="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 ring-1 ring-amber-200">✓ Free</span>
+                            <span class="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 ring-1 ring-amber-200">✓ No obligation</span>
+                            <span class="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 ring-1 ring-amber-200">✓ Insured & local</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white mt-12">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 SlipSafeCo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>

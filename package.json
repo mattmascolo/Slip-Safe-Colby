@@ -1,0 +1,38 @@
+{
+  "name": "slipsafeco",
+  "version": "1.0.0",
+  "description": "A simple HTML, CSS, JS, HTMX, and Tailwind CSS project for SlipSafeCo",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "htmx",
+    "tailwindcss",
+    "static-site",
+    "safety"
+  ],
+  "author": "SlipSafeCo",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slipsafeco/slipsafeco.git"
+  },
+  "bugs": {
+    "url": "https://github.com/slipsafeco/slipsafeco/issues"
+  },
+  "homepage": "https://github.com/slipsafeco/slipsafeco#readme"
+}
