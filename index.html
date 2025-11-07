@@ -26,6 +26,8 @@
                     <!-- Navigation Links - Hidden on smaller screens -->
                     <div class="hidden md:flex items-center space-x-4 mr-2">
                         <a href="#built-for-you" class="text-slate-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="residential.html" class="text-slate-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Residential</a>
+                        <a href="commercial.html" class="text-slate-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Commercial</a>
                         <a href="#about" class="text-slate-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#contact-form" class="text-slate-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
@@ -99,7 +101,7 @@
                 <!-- Tabs -->
                 <div class="mt-6">
                     <div role="tablist" aria-label="Feature tabs" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                        <button type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-tab-target="1" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-yellow-300 bg-yellow-50 px-4 py-3 text-yellow-700 hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                        <button type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-tab-target="1" class="flex flex-col items-center justify-center gap-2 rounded-lg border border-yellow-200 px-4 py-3 text-yellow-700 hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                             <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
                                 <svg width="28" height="28" viewBox="0 0 56 56" aria-hidden="true">
                                     <path fill="currentColor" d="M20 20h6v16h-6z"></path>
@@ -387,14 +389,17 @@
 
                 <!-- CTA -->
                 <div class="max-w-2xl mx-auto flex justify-center">
-                    <a
-                        href="#"
-                        role="button"
-                        class="inline-block rounded border border-yellow-400 bg-yellow-400 px-6 py-3 font-medium text-slate-900 shadow-sm transition-colors hover:bg-yellow-500 text-center"
-                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
-                    >
-                        Schedule a home visit
-                    </a>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <a
+                            href="#"
+                            role="button"
+                            class="inline-block rounded border border-yellow-400 bg-yellow-400 px-6 py-3 font-medium text-slate-900 shadow-sm transition-colors hover:bg-yellow-500 text-center"
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
+                        >
+                            Schedule a home visit
+                        </a>
+                        <a href="residential.html" class="inline-block rounded border border-blue-500 px-6 py-3 font-medium text-blue-600 shadow-sm transition-colors hover:bg-blue-50 text-center">Learn more</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -440,14 +445,17 @@
 
                 <!-- CTA row -->
                 <div class="max-w-2xl mx-auto flex justify-center">
-                    <a
-                        href="#"
-                        role="button"
-                        class="inline-block rounded border border-yellow-400 bg-yellow-400 px-6 py-3 font-medium text-slate-900 shadow-sm transition-colors hover:bg-yellow-500 text-center"
-                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
-                    >
-                        Book a free on-site demo
-                    </a>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <a
+                            href="#"
+                            role="button"
+                            class="inline-block rounded border border-yellow-400 bg-yellow-400 px-6 py-3 font-medium text-slate-900 shadow-sm transition-colors hover:bg-yellow-500 text-center"
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mattmascolo2/30min?primary_color=f59f0b'}); return false;"
+                        >
+                            Book a free on-site demo
+                        </a>
+                        <a href="commercial.html" class="inline-block rounded border border-blue-500 px-6 py-3 font-medium text-blue-600 shadow-sm transition-colors hover:bg-blue-50 text-center">Learn more</a>
+                    </div>
                 </div>
             </div>
         </section>

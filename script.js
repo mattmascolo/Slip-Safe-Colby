@@ -249,9 +249,9 @@ function initTabs() {
         const tabs = section.querySelectorAll('[data-tab-target]');
         const panels = section.querySelectorAll('[data-tab-panel]');
 
-        // Define color schemes for each tab
+        // Define color schemes for each tab (aligned with initial HTML classes)
         const colorSchemes = {
-            '1': { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700', hover: 'hover:bg-amber-100' },
+            '1': { bg: 'bg-yellow-50', border: 'border-yellow-300', text: 'text-yellow-700', hover: 'hover:bg-yellow-100' },
             '2': { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700', hover: 'hover:bg-blue-100' },
             '3': { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700', hover: 'hover:bg-green-100' },
             '4': { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700', hover: 'hover:bg-purple-100' }
@@ -269,17 +269,17 @@ function initTabs() {
                 
                 tab.setAttribute('aria-selected', selected ? 'true' : 'false');
                 
-                // Remove all possible color classes
+                // Remove all possible color and hover classes, plus default states
                 Object.values(colorSchemes).forEach(scheme => {
-                    tab.classList.remove(scheme.bg, scheme.border, scheme.text);
+                    tab.classList.remove(scheme.bg, scheme.border, scheme.text, scheme.hover);
                 });
-                tab.classList.remove('bg-white', 'border-slate-200', 'text-slate-700');
+                tab.classList.remove('bg-white', 'border-slate-200', 'border-gray-200', 'text-slate-700', 'hover:bg-slate-50');
                 
                 // Add appropriate classes based on state
                 if (selected) {
-                    tab.classList.add(colors.bg, colors.border, colors.text);
+                    tab.classList.add(colors.bg, colors.border, colors.text, colors.hover);
                 } else {
-                    tab.classList.add('bg-white', 'border-slate-200', 'text-slate-700');
+                    tab.classList.add('bg-white', 'border-gray-200', 'text-slate-700', 'hover:bg-slate-50');
                 }
             });
         }
