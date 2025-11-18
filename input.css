@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tell Tailwind v4 where to scan for class usage */
+@source "./*.html";
+@source "./**/*.html";
+@source "./**/*.js";
+
+/* Include custom CSS so @apply rules are compiled */
+@import "./styles.css";

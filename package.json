@@ -20,8 +20,10 @@
   ],
   "author": "SlipSafeCo",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -29,10 +31,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/slipsafeco/slipsafeco.git"
+    "url": "git+https://github.com/slipsafeco/slipsafeco.git"
   },
   "bugs": {
     "url": "https://github.com/slipsafeco/slipsafeco/issues"
   },
-  "homepage": "https://github.com/slipsafeco/slipsafeco#readme"
+  "homepage": "https://github.com/slipsafeco/slipsafeco#readme",
+  "type": "commonjs"
 }
